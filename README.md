@@ -25,5 +25,5 @@ Este repositorio contiene el frontend desarrollado para la práctica de la bibli
 1. Clonar este repositorio:
 
    ```bash
-   git clone https://github.com/tuusuario/2025-first-basic-frontend-mateyi.git
+   git clone https://github.com/mateyi/2025-first-basic-frontend-mateyi.git
    cd 2025-first-basic-frontend-mateyi
