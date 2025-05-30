@@ -1,29 +1,53 @@
-# Proyecto Frontend - Biblioteca
+# 📚 Biblioteca Virtual – Frontend
 
-Este repositorio contiene el frontend desarrollado para la práctica de la biblioteca, que se conecta al backend para mostrar y gestionar libros y usuarios.
-
----
-
-## Estructura del proyecto
-
-- Archivos HTML, CSS y JavaScript (o el framework que uses)
-- `README.md` - Documentación de la entrega.
+Este es el **frontend** del proyecto *Biblioteca Virtual*, una aplicación web que permite buscar libros por ID y visualizar su información. El sistema se conecta a un **backend en FastAPI** que sirve los datos desde una API REST.
 
 ---
 
-## Tecnologías usadas
+## 🚀 Pasos para ejecutar el proyecto
 
-- HTML5
-- CSS3
-- JavaScript (o el framework que usaste: React, Vue, Angular, etc.)
-- Axios o Fetch API para consumir el backend (si aplica)
+### 1. Clonar el repositorio del backend
 
----
+```bash
+git clone https://github.com/etec-programacion-3/2025-first-backend-mate-gimenez.git
+cd 2025-first-backend-mate-gimenez
 
-## Cómo levantar el frontend
+2. Crear entorno virtual e instalar dependencias
 
-1. Clonar este repositorio:
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 
-   ```bash
-   git clone https://github.com/mateyi/2025-first-basic-frontend-mateyi.git
-   cd 2025-first-basic-frontend-mateyi
+3. Iniciar el backend
+
+uvicorn main:app --reload
+
+4. Clonar el repositorio del frontend
+
+Abrí otra terminal y ejecutá:
+
+git clone https://github.com/etec-programacion-3/2025-first-basic-frontend-mateyi.git
+cd 2025-first-basic-frontend-mateyi
+
+5. Probar el frontend
+
+Abrí el archivo index.html con tu navegador:
+
+firefox index.html
+
+Cómo funciona
+
+    El frontend tiene una caja para ingresar el ID del libro.
+
+    Cuando presionás "Buscar", se hace una solicitud al backend (http://127.0.0.1:8000/libros/<ID>).
+
+    Si el libro existe, se muestran sus datos (título, autor y año).
+
+    Si no existe, aparece el mensaje: 📕 "Libro no encontrado."
+
+    Repositorios del proyecto
+
+    🔙 Backend: https://github.com/etec-programacion-3/2025-first-backend-mate-gimenez
+    Frontend: Repositorios del proyecto
+
+    🔙 Backend: https://github.com/etec-programacion-3/2025-first-basic-frontend-mateyi
