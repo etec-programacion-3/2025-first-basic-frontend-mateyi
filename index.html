@@ -2,12 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Frontend</title>
+  <title>Biblioteca Virtual</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>¡Hola desde Xubuntu!</h1>
-  <button onclick="saludar()">Haz clic</button>
+  <h1>📚 Biblioteca Virtual</h1>
+  <input type="text" id="buscador" placeholder="Buscar libro por ID">
+  <button onclick="buscarLibro()">Buscar</button>
+
+  <div id="resultado"></div>
 
   <script src="script.js"></script>
 </body>
