@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biblioteca Virtual</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>📚 Biblioteca Virtual</h1>
-  <input type="text" id="buscador" placeholder="Buscar libro por ID">
-  <button onclick="buscarLibro()">Buscar</button>
+  <div class="container">
+    <h1><img src="https://img.icons8.com/emoji/48/open-book-emoji.png" /> Biblioteca Virtual</h1>
+    <input type="text" id="input-id" placeholder="Buscar libro por ID" />
+    <button onclick="buscarLibro()">Buscar</button>
+    <div id="resultado" class="resultado"></div>
+  </div>
 
-  <div id="resultado"></div>
+  <script>
+    async function buscarLibro() {
+      const id = document.getElementById("input-id").value;
+      const resultado = document.getElementById("resultado");
+      resultado.textContent = "Buscando...";
 
-  <script src="script.js"></script>
+      try {
+        const response = await fetch(`http://127.0.0.1:8000/libros/${id}`);
+        if (!response.ok) throw new Error("Libro no encontrado");
+        const data = await response.json();
+        resultado.innerHTML = `
+          <strong>ID:</strong> ${data.id}<br>
+          <strong>Título:</strong> ${data.titulo}<br>
+          <strong>Autor:</strong> ${data.autor}<br>
+          <strong>Año:</strong> ${data.anio}
+        `;
+      } catch (error) {
+        resultado.textContent = "📕 Libro no encontrado.";
+      }
+    }
+  </script>
 </body>
 </html>
