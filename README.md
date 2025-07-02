@@ -2,6 +2,13 @@
 
 Este es el **frontend** del proyecto *Biblioteca Virtual*, una aplicación web que permite buscar libros por ID y visualizar su información. El sistema se conecta a un **backend en FastAPI** que sirve los datos desde una API REST.
 
+Información del Alumno
+
+    Mateo Gimenez
+    Curso: 5to Año
+    Especialidad: Informática
+
+
 ---
 
 ## 🚀 Pasos para ejecutar el proyecto
